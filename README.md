@@ -12,7 +12,7 @@
 
 ### 🏠 Página Principal (index.html)
 - Hero section con call-to-action
-- Planta destacada del mes (Monstera Thai Constellation)
+- Planta destacada del mes 
 - Carrusel de plantas populares
 - Sección de contacto integrada
 - Asistente AI para recomendaciones personalizadas
@@ -181,8 +181,8 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE.md` para más detalles.
 ## 👨‍💻 Autor
 
 **@Crisman.dev**
-- Email: contacto@onlyplants.com
-- Teléfono: +51 97 558 214
+- Email: web.pixelia@gmail.com
+- Teléfono: +51 988 052 497
 - Ubicación: TRX, Perú
 
 ## 🙏 Agradecimientos
