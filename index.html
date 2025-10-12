@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="OnlyPlants: Plantas decorativas de alta calidad para hogares y oficinas." />
+  <title>OnlyPlants | Plantas Decorativas que Transforman Espacios</title>
+
+  <!-- Dependencias de estilos y fuentes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700;800&family=Prata&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos local -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-leaf me-2"></i>OnlyPlants
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#colecciones">Colecciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tienda">Tienda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="inicio" class="hero-section">
+      <div class="hero-background"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="fw-bold">Naturaleza que Inspira tu Hogar</h1>
+          <p class="lead my-4">Descubre plantas únicas que purifican tu aire y transforman cada rincón en un oasis de calma y estilo.</p>
+          <div class="hero-cta">
+            <a href="#tienda" class="btn btn-primary btn-lg">Explorar Colección</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colecciones" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Colecciones Curadas</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="collection-card" data-category="interior">
+              <div class="collection-card-content">
+                <h3>Para Principiantes</h3>
+                <p>Plantas resistentes y de bajo mantenimiento.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="collection-card" data-category="poca-luz">
+              <div class="collection-card-content">
+                <h3>Poca Luz, Mucha Vida</h3>
+                <p>Ideales para rincones con menos sol.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="collection-card" data-category="grandes">
+              <div class="collection-card-content">
+                <h3>De Gran Impacto</h3>
+                <p>Plantas grandes que definen un espacio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tienda" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4 fw-bold">Nuestra Galería</h2>
+        <div class="filters-section mb-5">
+            <div class="search-bar">
+                <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Buscar por nombre...">
+            </div>
+            <div class="filter-buttons btn-group" role="group">
+                <button class="btn btn-outline-success active" data-category="all">Todas</button>
+                <button class="btn btn-outline-success" data-category="interior">Interior</button>
+                <button class="btn btn-outline-success" data-category="suculentas">Suculentas</button>
+                <button class="btn btn-outline-success" data-category="colgantes">Colgantes</button>
+                <button class="btn btn-outline-success" data-category="flores">Con Flores</button>
+            </div>
+        </div>
+        <div id="plantsGrid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Las tarjetas de plantas se insertarán aquí dinámicamente -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="mb-0">&copy; 2025 OnlyPlants. Diseñado por @pixelia.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal para detalles de la planta -->
+  <div class="modal fade" id="plantModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+              <div id="modalBody">
+                  <!-- Contenido del modal se insertará aquí -->
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Modal para el Asesor IA -->
+  <div id="aiModal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">🌱 Encuentra tu planta ideal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="aiQuestions">
+            <!-- Preguntas del asesor se cargarán aquí -->
+          </div>
+          <div id="aiResult" class="d-none text-center">
+            <h5 class="mb-3">¡Esta es tu planta ideal!</h5>
+            <img id="resultImage" src="" alt="Planta recomendada" class="img-fluid rounded mb-3" style="max-height: 250px;">
+            <h4 id="resultName" class="text-success"></h4>
+            <p id="resultDescription"></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Offcanvas para el Carrito de Compras -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="cartOffcanvasLabel"><i class="fas fa-shopping-cart me-2"></i>Mi Carrito</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="cartBody">
+      <!-- Items del carrito se insertarán aquí -->
+    </div>
+    <div class="offcanvas-footer p-3 border-top">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold fs-5">Total:</span>
+            <span class="fw-bold fs-5" id="cartTotal">$0</span>
+        </div>
+        <button class="btn btn-success w-100 btn-lg" id="checkoutButton">
+            <i class="fab fa-whatsapp me-2"></i>Finalizar Compra
+        </button>
+    </div>
+  </div>
+
+
+  <!-- Botones Flotantes -->
+  <div class="floating-buttons-container">
+    <button id="aiButton" class="floating-btn" data-bs-toggle="modal" data-bs-target="#aiModal" aria-label="Asesor de plantas IA">
+      <i class="fas fa-robot"></i>
+    </button>
+    <button id="cartButton" class="floating-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito de compras">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge rounded-pill bg-danger" id="cart-count">0</span>
+    </button>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script local de la aplicación -->
+  <script src="script.js"></script>
+</body>
+</html>
+
