@@ -1,192 +1,328 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="OnlyPlants: Plantas decorativas de alta calidad para hogares y oficinas." />
-  <title>OnlyPlants | Plantas Decorativas que Transforman Espacios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>OnlyPlants: Plantas Premium para tu Hogar | Envío Rápido</title>
+    
+    <meta name="description" content="Transforma tu espacio con plantas únicas. OnlyPlants te ofrece la mejor selección de interior, suculentas y más. ¡Únete a nuestro club y recibe vida en tu puerta!">
+    
+    <link rel="canonical" href="https://www.onlyplants.com/">
+    
+    <link rel="icon" href="./assets/images/oplogo.ico" type="image/x-icon">
+
+    <meta property="og:title" content="OnlyPlants: Plantas Premium para tu Hogar">
+    <meta property="og:description" content="Transforma tu espacio con plantas únicas. Únete a nuestro club y recibe vida en tu puerta.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://web-onlyplants.netlify.app">
+    <meta property="og:image" content="https://www.onlyplants.com/assets/onlyplants-og-image.jpg">
+    <meta property="og:image:alt" content="Una sala de estar moderna y luminosa llena de plantas de OnlyPlants.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Montserrat', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            },
+            colors: {
+              // Colores de la marca "OnlyPlants"
+              'brand-green': '#27ae60', // Verde principal (del CSS original)
+              'brand-dark': '#2c3e50',  // Footer y texto oscuro (del CSS original)
+              'brand-light': '#F5EFE6', // Fondo suave (del CSS original)
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                    transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
 </head>
-<body class="no-scroll"> <div id="video-intro-overlay">
-    <video id="introVideo" preload="auto" muted playsinline>
-      <source src="./assets/video/op_bannerx8.mp4" type="video/mp4">
-      Tu navegador no soporta el tag de video.
-    </video>
-    <button id="skip-intro-btn">Entrar</button>
-  </div>
-  
-  <main id="main-content">
-    
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#inicio">OnlyPlants</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
-    <section id="inicio" class="hero-section">
-        <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>🌿 Bienvenido a OnlyPlants 🌿</h1>
-                <p>Descubre el mundo mágico de las plantas de interior y transforma tu hogar en un paraíso verde lleno de vida y armonía</p>
-                <div class="hero-cta">
-                    <a href="galeria.html" class="btn-primary">Explorar Plantas</a>
-                    <a href="#contacto" class="btn-secondary">Contactar</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<body class="font-sans text-brand-dark antialiased">
 
-    <section id="destacada" class="featured-plant-section py-5 fade-in-section">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Monstera%20Thai%20Constellation%20plant%20with%20variegated%20cream%20and%20green%20leaves%20in%20elegant%20ceramic%20pot%2C%20indoor%20plant%2C%20botanical%20photography%2C%20natural%20lighting%2C%20high%20quality&image_size=landscape_4_3" alt="Monstera Thai Constellation en una maceta elegante" class="img-fluid rounded-3 shadow-lg">
+    <header class="bg-white/90 sticky top-0 z-50 shadow-md backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="#hero" class="text-3xl font-bold font-serif text-brand-green">
+                OnlyPlants
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="text-gray-600 hover:text-brand-green transition-colors duration-200">Beneficios</a>
+                <a href="#collection" class="text-gray-600 hover:text-brand-green transition-colors duration-200">Colección</a>
+                <a href="#cta" class="bg-brand-green text-white px-5 py-2 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-200 shadow-sm">
+                    Unirse al Club
+                </a>
             </div>
-            <div class="col-lg-6">
-              <h2 class="display-5 mb-3">Planta del Mes: Monstera Thai Constellation</h2>
-              <h5 class="text-muted mb-4">"Por qué nos encanta"</h5>
-              <p class="lead mb-4">
-                No es solo una planta, es una joya botánica. Cada hoja es un lienzo único, salpicado de estrellas cremosas que evocan una galaxia. Su rareza y belleza inigualable la convierten en el centro de atención de cualquier colección, un verdadero símbolo de sofisticación natural.
-              </p>
-              <div class="quick-stats mb-4">
-                <div class="stat-item">☀️ Luz Brillante Indirecta</div>
-                <div class="stat-item">💧 Riego Moderado</div>
-                <div class="stat-item">🌱 Cuidado Intermedio</div>
-              </div>
-              <a href="#" class="btn btn-dark btn-lg">Comprar Ahora</a>
-            </div>
-          </div>
+            
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-100">
+            <a href="#features" class="block px-6 py-3 text-gray-700 hover:bg-gray-50">Beneficios</a>
+            <a href="#collection" class="block px-6 py-3 text-gray-700 hover:bg-gray-50">Colección</a>
+            <a href="#cta" class="block text-center px-6 py-4 bg-brand-light/50 text-brand-green font-semibold">
+                Unirse al Club
+            </a>
         </div>
-    </section>
+    </header>
 
-    <section id="galeria" class="py-5 fade-in-section">
-        <div class="container">
-          <h2 class="text-center mb-5 fw-bold">Nuestras Plantas Más Populares</h2>
-          <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row g-4">
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Sansevieria%20Zeylanica%20snake%20plant%20with%20tall%20green%20striped%20leaves%20in%20modern%20white%20pot%2C%20indoor%20houseplant%2C%20minimalist%20style%2C%20clean%20background&image_size=portrait_4_3" alt="Sansevieria Zeylanica" class="card-img-top"><div class="card-body"><h5 class="card-title">Sansevieria Zeylanica</h5><p class="card-text">Baja mantenimiento. Ideal para interiores.</p></div></div></div>
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Monstera%20Deliciosa%20plant%20with%20large%20split%20fenestrated%20green%20leaves%20in%20terracotta%20pot%2C%20tropical%20houseplant%2C%20lush%20foliage%2C%20natural%20indoor%20lighting&image_size=portrait_4_3" alt="Monstera Deliciosa" class="card-img-top"><div class="card-body"><h5 class="card-title">Monstera Deliciosa</h5><p class="card-text">La reina de las plantas de interior.</p></div></div></div>
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Ficus%20Lyrata%20fiddle%20leaf%20fig%20with%20large%20violin%20shaped%20green%20leaves%20in%20woven%20basket%20pot%2C%20tall%20indoor%20tree%2C%20elegant%20home%20decor&image_size=portrait_4_3" alt="Ficus Lyrata" class="card-img-top"><div class="card-body"><h5 class="card-title">Ficus Lyrata</h5><p class="card-text">Dramática y sofisticada.</p></div></div></div>
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Pothos%20Aureus%20golden%20pothos%20with%20heart%20shaped%20variegated%20leaves%20cascading%20from%20hanging%20pot%2C%20trailing%20vine%20plant%2C%20bright%20indoor%20setting&image_size=portrait_4_3" alt="Pothos Aureus" class="card-img-top"><div class="card-body"><h5 class="card-title">Pothos Aureus</h5><p class="card-text">Ideal para estanterías colgantes.</p></div></div></div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row g-4">
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Colorful%20flowering%20cactus%20with%20bright%20pink%20and%20yellow%20blooms%20in%20small%20decorative%20pot%2C%20desert%20succulent%2C%20vibrant%20flowers%2C%20indoor%20plant&image_size=portrait_4_3" alt="Cactus Flores" class="card-img-top"><div class="card-body"><h5 class="card-title">Cactus Florido</h5><p class="card-text">Pequeños pero vibrantes.</p></div></div></div>
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Calathea%20Orbifolia%20plant%20with%20large%20round%20striped%20leaves%20in%20elegant%20ceramic%20pot%2C%20prayer%20plant%2C%20artistic%20foliage%20patterns%2C%20tropical%20houseplant&image_size=portrait_4_3" alt="Calathea Orbifolia" class="card-img-top"><div class="card-body"><h5 class="card-title">Calathea Orbifolia</h5><p class="card-text">La obra de arte vegetal.</p></div></div></div>
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Zamioculcas%20Zamiifolia%20ZZ%20plant%20with%20glossy%20dark%20green%20leaves%20in%20modern%20black%20pot%2C%20hardy%20houseplant%2C%20architectural%20foliage%2C%20low%20maintenance&image_size=portrait_4_3" alt="Zamioculcas Zamiifolia" class="card-img-top"><div class="card-body"><h5 class="card-title">ZZ Plant</h5><p class="card-text">Superviviente nata.</p></div></div></div>
-                  <div class="col-md-3"><div class="card product-card"><img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Bonsai%20Ficus%20Retusa%20tree%20with%20small%20green%20leaves%20and%20twisted%20trunk%20in%20traditional%20ceramic%20pot%2C%20miniature%20tree%2C%20zen%20garden%20style%2C%20artistic%20cultivation&image_size=portrait_4_3" alt="Bonsái Ficus Retusa" class="card-img-top"><div class="card-body"><h5 class="card-title">Bonsái Ficus</h5><p class="card-text">Arte vivo en miniatura.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
-          </div>
-        </div>
-    </section>
-    
-    <section id="contacto" class="py-5 contact-section fade-in-section">
-        <div class="container">
-          <h2 class="text-center mb-4 fw-bold">¿Listo para tener tu planta ideal?</h2>
-          <p class="text-center mb-5 fs-5">Contáctanos para pedidos personalizados, asesoría de jardinería o envíos urgentes.</p>
-          <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-              <p><i class="fas fa-envelope me-2"></i> crismandev@onlyplants.com</p>
-              <p><i class="fas fa-phone me-2"></i> +51 97 558 214</p>
-              <p><i class="fas fa-map-marker-alt me-2"></i> TRX, Perú</p>
-              <a href="mailto:contacto@onlyplants.com" class="btn btn-success mt-4">Escríbenos Ahora</a>
-            </div>
-          </div>
-        </div>
-    </section>
+    <main>
 
-    <footer id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="footer-column"><h5>OnlyPlants</h5><p class="text-muted">Transformamos espacios con vida. Plantas decorativas de alta calidad, cultivadas con amor y entregadas frescas a tu puerta.</p></div>
+        <section id="hero" class="relative h-screen min-h-[600px] text-white overflow-hidden">
+            
+            <div id="hero-slides" class="absolute inset-0 z-0">
+                
+                <img src="assets/images/ficus lyrata.jpg" 
+                     alt="Planta Ficus Lyrata con grandes hojas en una sala luminosa." 
+                     class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out" 
+                     loading="eager" decoding="auto">
+                
+                <img src="assets/images/aloe vera.jpg" 
+                     alt="Primer plano de una planta de Aloe Vera." 
+                     class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out" 
+                     loading="lazy" decoding="async">
+                
+                <img src="assets/images/echeveria.jpg" 
+                     alt="Suculenta Echeveria con forma de roseta." 
+                     class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out"              
+                     loading="lazy" decoding="async">
+                
+                <img src="assets/images/sansevieria.jpg" 
+                     alt="Planta Sansevieria alta en una maceta minimalista." 
+                     class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out" 
+                     loading="lazy" decoding="async">
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="footer-column"><h5>Contacto</h5><p><i class="fas fa-envelope me-2"></i> contacto@onlyplants.com</p><p><i class="fas fa-phone me-2"></i> +51 97 558 214</p><p><i class="fas fa-map-marker-alt me-2"></i> TRX, Perú</p></div>
+            
+            <div class="absolute inset-0 bg-brand-dark/50 z-10"></div>
+            
+            <div class="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
+                <article>
+                    <h1 class="font-serif text-5xl md:text-7xl font-extrabold leading-tight mb-6" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+                        Tu Oasis Personal
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-lg mx-auto" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">
+                        Descubre plantas de interior que purifican tu aire y alegran tu espacio. Entrega directa a tu puerta.
+                    </p>
+                    <a href="#collection" class="inline-block bg-brand-green text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-transform hover:scale-105 duration-300 shadow-lg">
+                        Ver Colección
+                    </a>
+                </article>
             </div>
-            <div class="col-lg-4 col-md-12">
-              <div class="footer-column">
-                <h5>Síguenos</h5>
-                <div class="social-icons">
-                  <a href="https://instagram.com/onlyplants" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                  <a href="https://facebook.com/onlyplants" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://tiktok.com/@onlyplants" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                  <a href="https://pinterest.com/onlyplants" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        </section>
+
+        <section id="features" class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                        ¿Por Qué Elegir OnlyPlants?
+                    </h2>
+                    <p class="text-lg text-gray-600">
+                        Hacemos que tener una jungla urbana sea fácil, sostenible y hermoso.
+                    </p>
                 </div>
-              </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mt-16">
+                    <article class="text-center p-6 fade-in">
+                        <div class="flex items-center justify-center h-16 w-16 bg-brand-light rounded-full mx-auto mb-4">
+                            <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-brand-dark mb-2">Selección Exclusiva</h3>
+                        <p class="text-gray-600">
+                            Accede a plantas raras y de alta calidad que no encontrarás en viveros comunes.
+                        </p>
+                    </article>
+                    <article class="text-center p-6 fade-in" style="transition-delay: 150ms;">
+                        <div class="flex items-center justify-center h-16 w-16 bg-brand-light rounded-full mx-auto mb-4">
+                            <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-1.414 1.414a1 1 0 01-.707.293H10.414a1 1 0 01-.707-.293L8.293 13.293A1 1 0 007.586 13H4"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-brand-dark mb-2">Empaque Sostenible</h3>
+                        <p class="text-gray-600">
+                            Tu planta llega segura en un empaque 100% libre de plásticos y biodegradable.
+                        </p>
+                    </article>
+                    <article class="text-center p-6 fade-in" style="transition-delay: 300ms;">
+                        <div class="flex items-center justify-center h-16 w-16 bg-brand-light rounded-full mx-auto mb-4">
+                            <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-brand-dark mb-2">Guía de Cuidados</h3>
+                        <p class="text-gray-600">
+                            Cada planta incluye una guía digital para que sepas exactamente cómo cuidarla.
+                        </p>
+                    </article>
+                </div>
             </div>
-          </div>
-          <div class="copyright">
-            &copy; 2025 OnlyPlants. @Crisman.dev. | <a href="#" style="color: #3498db;">Política de Privacidad</a>
-          </div>
+        </section>
+
+        <section id="collection" class="bg-brand-light py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark text-center mb-16">
+                    Nuestra Colección Popular
+                </h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in">
+                        <img src="https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?w=400&h=400&fit=crop&crop=center&q=80" 
+                             alt="Planta Sansevieria alta en una maceta blanca minimalista." 
+                             class="w-full h-64 object-cover"
+                             loading="lazy" 
+                             decoding="async">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-serif text-2xl font-semibold text-brand-dark mb-2">Sansevieria</h3>
+                            <p class="text-gray-600 mb-4">
+                                Extremadamente resistente, purifica el aire y requiere muy poco mantenimiento.
+                            </p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <span class="text-sm font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Poca Luz</span>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in" style="transition-delay: 100ms;">
+                        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=400&h=400&fit=crop&crop=center&q=80" 
+                             alt="Primer plano de una hoja de Monstera Deliciosa con sus características perforaciones." 
+                             class="w-full h-64 object-cover"
+                             loading="lazy" 
+                             decoding="async">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-serif text-2xl font-semibold text-brand-dark mb-2">Monstera Deliciosa</h3>
+                            <p class="text-gray-600 mb-4">
+                                La reina de Instagram. Sus hojas grandes y perforadas son un ícono del diseño.
+                            </p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <span class="text-sm font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Popular</span>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in" style="transition-delay: 200ms;">
+                        <img src="https://images.unsplash.com/photo-1632207691143-643e2a9a9361?w=400&h=400&fit=crop&crop=center&q=80" 
+                             alt="Planta Zamioculcas (ZZ) con hojas verdes brillantes en una maceta oscura." 
+                             class="w-full h-64 object-cover"
+                             loading="lazy" 
+                             decoding="async">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-serif text-2xl font-semibold text-brand-dark mb-2">Planta ZZ</h3>
+                            <p class="text-gray-600 mb-4">
+                                Prácticamente indestructible. Perfecta para principiantes u oficinas oscuras.
+                            </p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <span class="text-sm font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Principiantes</span>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in" style="transition-delay: 300ms;">
+                        <img src="https://images.unsplash.com/photo-1586093248219-4d3e1b41e7b4?w=400&h=400&fit=crop&crop=center&q=80" 
+                             alt="Planta Pothos dorada colgando de una estantería." 
+                             class="w-full h-64 object-cover"
+                             loading="lazy" 
+                             decoding="async">
+                        <div class="p-6 flex-grow">
+                            <h3 class="font-serif text-2xl font-semibold text-brand-dark mb-2">Pothos</h3>
+                            <p class="text-gray-600 mb-4">
+                                Una planta colgante muy popular por su facilidad de cuidado y rápido crecimiento.
+                            </p>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <span class="text-sm font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Colgante</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="bg-brand-dark text-white">
+            <div class="container mx-auto px-6 py-16 md:py-24 text-center">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
+                    Únete al Club OnlyPlants Hoy
+                </h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                    Recibe un 15% de descuento en tu primer pedido, además de consejos de cuidado exclusivos y acceso anticipado a nuevas colecciones.
+                </p>
+                
+                <form class="flex flex-col md:flex-row justify-center max-w-lg mx-auto gap-4">
+                    <label for="email-cta" class="sr-only">Tu correo electrónico</label>
+                    <input type="email" id="email-cta" placeholder="tu-correo@ejemplo.com" class="w-full px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-green" required>
+                    <button type="submit" class="w-full md:w-auto bg-brand-green text-white px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition-all duration-200">
+                        Suscribirme
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                
+                <div>
+                    <a href="#hero" class="text-3xl font-bold font-serif text-brand-green">
+                        OnlyPlants
+                    </a>
+                    <p class="text-gray-600 mt-2 max-w-xs mx-auto md:mx-0">
+                        Transformamos espacios con vida, una planta a la vez.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg text-brand-dark mb-3">Síguenos</h4>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" aria-label="Instagram" class="text-gray-500 hover:text-brand-green transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2.89a.75.75 0 01.63 0 11.2 11.2 0 013.931.92c.6.25 1.128.563 1.6.9.47.34 1.003.77 1.48 1.25.48.48.91.998 1.25 1.48.34.47.65 1 .9 1.6.34.8.57 1.6.9 2.4.24.8.36 1.6.36 2.4s-.12 1.6-.36 2.4a11.2 11.2 0 01-.9 2.4c-.25.6-.563 1.128-.9 1.6-.34.47-.77 1.003-1.25 1.48a6.9 6.9 0 01-1.48 1.25c-.47.34-1 .65-1.6.9a11.2 11.2 0 01-2.4.9 11.2 11.2 0 01-2.4.36c-.8 0-1.6-.12-2.4-.36a11.2 11.2 0 01-2.4-.9c-.6-.25-1.128-.563-1.6-.9-.47-.34-1.003-.77-1.48-1.25a6.9 6.9 0 01-1.25-1.48c-.34-.47-.65-1-.9-1.6a11.2 11.2 0 01-.9-2.4 11.2 11.2 0 01-.36-2.4c0-.8.12-1.6.36-2.4.25-.8.563-1.6.9-2.4.34-.6.77-1.128 1.25-1.6s.998-1.003 1.48-1.48c.47-.34 1-.65 1.6-.9.8-.25 1.6-.57 2.4-.9a11.2 11.2 0 012.4-.36zM8.2 12a3.8 3.8 0 117.6 0 3.8 3.8 0 01-7.6 0zM12 14.2a2.2 2.2 0 100-4.4 2.2 2.2 0 000 4.4z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="text-gray-500 hover:text-brand-green transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="text-gray-500 hover:text-brand-green transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525 0H9.67C9.324 0 9 .324 9 .67v16.155c0 .346.324.67.67.67h2.855c.346 0 .67-.324.67-.67V.67C13.195.324 12.871 0 12.525 0zM6.5 3.51v13.31c0 .346.324.67.67.67h2.855c.346 0 .67-.324.67-.67V3.51c0-.346-.324-.67-.67-.67H7.17c-.346 0-.67.324-.67.67zM18.33 6.36v10.46c0 .346.324.67.67.67h2.855c.346 0 .67-.324.67-.67V6.36c0-.346-.324-.67-.67-.67h-2.855c-.346 0-.67.324-.67.67z" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg text-brand-dark mb-3">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-brand-green transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-brand-green transition-colors">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="text-center text-gray-500 border-t border-gray-200 mt-8 pt-8">
+                <p>&copy; 2025 OnlyPlants. Todos los derechos reservados.</p>
+                <p class="text-xs text-gray-400 mt-2">Diseño y Desarrollo por Pixelia</p>
+            </div>
         </div>
     </footer>
+<script src="script.js" defer></script>
 
-    <button id="aiButton" class="btn btn-success position-fixed bottom-0 end-0 m-4 rounded-pill shadow-lg">
-        <i class="fas fa-robot me-2"></i> ¿Qué planta necesitas?
-    </button>
-
-    <div id="aiModal" class="modal fade" tabindex="-1" aria-labelledby="aiModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="aiModalLabel">🌱 Encuentra tu planta ideal</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div id="aiQuestions"></div>
-              <div id="aiResult" class="d-none mt-4 p-4 bg-light rounded-3 text-center">
-                <img id="resultImage" src="" alt="Recomendación de planta" class="rounded-2 mb-3" style="max-height: 200px; object-fit: cover;">
-                <h4 id="resultName" class="text-success"></h4>
-                <p id="resultDescription" class="lead"></p>
-                <p class="mt-3"><small>✨ ¡Tu planta ideal está esperándote!</small></p>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" id="aiNextBtn" class="btn btn-success">Siguiente</button>
-            </div>
-          </div>
-        </div>
-    </div>
-  </main>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
-
-</body>
+    </body>
 </html>
